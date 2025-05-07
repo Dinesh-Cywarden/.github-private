@@ -1,0 +1,67 @@
+[
+  {
+    "identifier": "service_for_pull_request",
+    "title": "Service for Pull Request",
+    "description": "Service related to Pull Request",
+    "icon": "Github",
+    "schema": {
+      "properties": {
+        "tier": {
+          "type": "string",
+          "title": "tier",
+          "icon": "DefaultProperty",
+          "enum": ["1", "2"],
+          "enumColors": {"1": "green", "2": "red"}
+        },
+        "readme": {
+          "type": "string",
+          "title": "Readme",
+          "description": "Readme",
+          "icon": "Book",
+          "format": "markdown"
+        },
+        "language": {
+          "type": "string",
+          "title": "Language",
+          "icon": "GitSubIcon"
+        },
+        "slack": {
+          "type": "string",
+          "title": "Slack",
+          "icon": "Slack",
+          "format": "url"
+        },
+        "url": {
+          "type": "string",
+          "title": "URL",
+          "icon": "Search",
+          "format": "url"
+        }
+      },
+      "required": []
+    },
+    "mirrorProperties": {},
+    "calculationProperties": {},
+    "aggregationProperties": {},
+    "relations": {}
+  },
+  {
+    "identifier": "pull_request",
+    "title": "Pull Request",
+    "description": "Pull Requests are show here",
+    "icon": "Github",
+    "schema": {"properties": {}, "required": []},
+    "mirrorProperties": {},
+    "calculationProperties": {},
+    "aggregationProperties": {},
+    "relations": {
+      "service_for_pull_request": {
+        "title": "Service for Pull Request",
+        "description": "Service related to Pull Request",
+        "target": "service_for_pull_request",
+        "required": true,
+        "many": false
+      }
+    }
+  }
+]
