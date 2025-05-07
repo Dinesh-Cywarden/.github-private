@@ -1,1 +1,26 @@
-
+resources:
+  - kind: pull_request
+    selector:
+      query: "true"
+    port:
+      entity:
+        mappings:
+          identifier: .id
+          title: .title
+          blueprint: '"pull_request"'
+          properties: {}
+  - kind: service_for_pull_request
+    selector:
+      query: "true"
+    port:
+      entity:
+        mappings:
+          identifier: .serviceId
+          title: .serviceName
+          blueprint: '"service_for_pull_request"'
+          properties:
+            tier: .tier
+            readme: .readme
+            language: .language
+            slack: .slack
+            url: .url
