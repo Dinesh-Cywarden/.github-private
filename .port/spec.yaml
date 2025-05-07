@@ -1,1 +1,38 @@
 
+# Base integration spec—defines UI metadata and validation
+type: github
+description: GitHub integration to import Pull Requests and related Services into Port
+icon: Github
+
+features:
+  - type: exporter
+    section: Git Providers
+    resources:
+      - kind: pull_request
+      - kind: service_for_pull_request
+
+configurations:
+  - name: githubToken
+    required: true
+    type: string
+    description: "Personal Access Token or App installation token for GitHub API"
+    sensitive: true
+  - name: repository
+    required: true
+    type: string
+    description: "Repository name in the format owner/repo"
+  - name: idpClientId
+    required: true
+    type: string
+    description: "OAuth Client ID for Port IDP"
+    sensitive: true
+  - name: idpClientSecret
+    required: true
+    type: string
+    description: "OAuth Client Secret for Port IDP"
+    sensitive: true
+  - name: webhookSecret
+    required: false
+    type: string
+    description: "Optional secret for validating incoming GitHub webhooks"
+    sensitive: true
